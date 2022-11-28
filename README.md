@@ -46,12 +46,10 @@ docker run -p 8080:80 nom_docker_test
 - Le traitement se fait automatiquement et est affiché sur le localhost
 - l'interface swagger est accessible à l'addresse : 
 
-
+<p align="center">
 http://localhost:8080/docs
-
+</p>
 
 # Développeur 👨🏽‍🤝‍👨🏼
 
 kingerkagon - Eric Stuhlfauth - https://github.com/kingerkagon
-
-
