@@ -4,13 +4,9 @@ Ce programme permet de traiter une liste de nombres entiers aléatoires et d'aff
  - Geste, si la valeur de la liste est divisible par 3
  - Forme, si la valeur de la liste est divisible par 5
  - Gestorme, si la valeur de la liste est divisible par 3 et par 5
- - l'entier de la liste si aucune des conditions n'est remplies
+ - l'entier de la liste si aucune des conditions n'est remplis
 
 Le projet est structuré en microservice depuis le framework FastApi et conteneurisé par Docker. 
- 
-
-
-Crée par Eric Stuhlfauth
 
 ## Requirements
   - Python : 3.11+
@@ -44,5 +40,9 @@ docker run -p 8080:80 nom_docker_test
 7. retournez sur docker desktop
 8. vérifiez le container a pour status "running"
 9. cliquez sur le lien de la colonne port(s)
+
+# Développeur
+
+kingerkagon - Eric Stuhlfauth - https://github.com/kingerkagon
 
 
