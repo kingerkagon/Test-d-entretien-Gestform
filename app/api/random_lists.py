@@ -14,7 +14,7 @@ from fastapi import APIRouter, HTTPException, Request
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 
-# from app.api.models import length_input
+from app.api.models import length_input
 
 # Génération de la liste
 ma_liste = random.sample(range(-1000, 1000), 3)
@@ -25,10 +25,10 @@ random_list = APIRouter()
 
 templates = Jinja2Templates(directory="templates")
 
-list_length = 20
+list_length = [20]
 
 
-def create_random_list(list_lenght: int):
+def create_random_list(list_lenght: list):
     """ Permet de créer une liste composé de nombres
     entiers compris entre -1000 et 1000
 
@@ -37,7 +37,7 @@ def create_random_list(list_lenght: int):
     return:
         my_liste (list): liste aléatoire
     """
-    my_liste = random.sample(range(-1000, 1000), list_lenght)
+    my_liste = random.sample(range(-1000, 1000), list_lenght[0])
 
     return my_liste
 
@@ -90,19 +90,19 @@ async def index(request: Request):
                                       })
 
 
-# @random_list.post('/', status_code=201)
-# async def add_list(payload: length_input):
-#     """_summary_
+@random_list.post('/', status_code=201)
+async def add_list(payload: length_input):
+    """_summary_
 
-#     Args:
-#         payload (RandomList): _description_
+    Args:
+        payload (RandomList): _description_
 
-#     Returns:
-#         _type_: _description_
-#     """
-#     list_length = 15
+    Returns:
+        _type_: _description_
+    """
+    list_length[0] = 15
 
-#     return {'length': list_length}
+    return {'length': list_length[0], "liste": list_length}
 
 # @random_list.post('/', status_code=201)
 # async def add_list(payload: RandomList):
