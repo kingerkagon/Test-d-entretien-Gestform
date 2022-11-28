@@ -50,7 +50,7 @@ docker run -p 8080:80 nom_docker_test
 http://localhost:8080/docs
 </p>
 
-Vous pouvez essayer d'utiliser la méthode POST pour ajouter des valeurs à la liste aléatoire. 
+Vous pouvez essayer d'utiliser la méthode POST pour ajouter des valeurs à la liste aléatoire et rafraichir la page index.
 
 # Développeur 👨🏽‍🤝‍👨🏼
 
