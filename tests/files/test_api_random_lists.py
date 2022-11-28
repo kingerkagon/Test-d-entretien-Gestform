@@ -83,7 +83,7 @@ class TestRandomList(unittest.TestCase):
 
     def test_exceptions_none(self):
         """
-        Test la capacité de la méthode à traiter le cas où 
+        Test la capacité de la méthode à traiter le cas où
         la liste n'existe pas
         """
         test_data = None
@@ -108,7 +108,7 @@ class TestRandomList(unittest.TestCase):
 
     def test_creation_none_error(self):
         """
-        Test la capacité de la méthode à gérer une mauvaise liste (none) 
+        Test la capacité de la méthode à gérer une mauvaise liste (none)
         """
         test_data = None
         result = create_random_list_test(test_data)
