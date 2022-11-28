@@ -25,7 +25,9 @@ Les dépendences suivantes devraient s'installer au travers du docker :
 1. clonez ce repository.
 2. vérifiez que vous disposez bien de la version de python 3.11, dans le cas contraire rendez vous sur:
 
-https://www.python.org/downloads/
+<p align="center">
+[// Your content](https://www.python.org/downloads/)
+</p>
 	
 4. dans votre nouveau repository, naviguez vers la racine du projet.
 5. lancez docker desktop 
