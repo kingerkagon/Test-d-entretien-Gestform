@@ -100,7 +100,7 @@ class TestRandomList(unittest.TestCase):
 
     def test_creation_type_errror(self):
         """
-        Test la capacité de la méthode à créer la bonne taille de liste
+        Test la capacité de la méthode à gérer une mauvaise liste
         """
         test_data = ["18"]
         result = create_random_list_test(test_data)
@@ -108,7 +108,7 @@ class TestRandomList(unittest.TestCase):
 
     def test_creation_none_error(self):
         """
-        Test la capacité de la méthode à créer la bonne taille de liste
+        Test la capacité de la méthode à gérer une mauvaise liste (none) 
         """
         test_data = None
         result = create_random_list_test(test_data)
