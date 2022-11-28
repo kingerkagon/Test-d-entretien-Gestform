@@ -47,7 +47,7 @@ docker run -p 8080:80 nom_docker_test
 - l'interface swagger est accessible à l'addresse : 
 
 <p align="center">
-[https://www.python.org/downloads/](http://localhost:8080/docs)
+http://localhost:8080/docs
 </p>
 
 # Développeur 👨🏽‍🤝‍👨🏼
