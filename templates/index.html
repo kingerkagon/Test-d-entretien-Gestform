@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Entretien Gestform</title>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'>
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/style.css') }}">
+
+</head>
+
+<body>
+    <div class="df-content-wrapper">
+        <div class="df-overlay"></div>
+        <div class="df-content">
+
+            <header class="df-navigation">
+
+            </header>
+
+            <section class="df-main df-home-content container">
+
+                <h2>Traitement de la liste aléatoire</h2>
+                <p>
+                    Soit une liste aléatoire de nombres entiers, compris entre -1000 et 1000. <br>
+                    Pour chaque nombre n de liste, on veut effectuer les opérations suivantes :
+                </p>
+                    <ol>
+                        <li> Si le nombre est divisible par 3 : on affiche Geste</li>
+                        <li> Si le nombre est divisible par 5 : on affiche Forme</li>
+                        <li> Si le nombre est divisible par 3 et par 5 : on affiche Gestform </li>
+                        <li> Sinon : on affiche le nombre n</li>
+                    </ol>
+                
+                <!-- <table>
+                    {{ random_list_data }} 
+                </table> -->
+
+                <p>
+                    Liste aléatoire : 
+                </p>
+
+                <table class="styled-table" style="color:rgb(27, 26, 27); font-weight: bold;">
+                    <tr>
+                        {% for value in random_list_data %}
+                            <td> {{ value }} </td>
+                        {% endfor %}
+                    </tr>
+                </table>
+
+                <p>
+                    Affichage : 
+                </p>
+
+                <table class="styled-table" style="color:rgb(27, 26, 27); font-weight: bold;">
+                    <tr>
+                        {% for value_output in output_list %}
+                            <td> {{ value_output }} </td>
+                        {% endfor %}
+                    </tr>
+                </table>
+                    
+                <div class="df-social">
+                    <ul>
+                        <li><a href="https://www.linkedin.com/in/eric-stuhlfauth/"><i class="fa fa-linkedin"></i></a>
+                        </li>
+                        <li><a href="https://github.com/kingerkagon"><i class="fa fa-github"></i></a></li>
+                    </ul>
+                </div>
+            </section>
+            <footer class="df-footer"> par eric stuhlfauth </footer>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
