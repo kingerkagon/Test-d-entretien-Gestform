@@ -1,16 +1,10 @@
-"""_summary_
-
-Raises:
-    HTTPException: _description_
-    HTTPException: _description_
-
-Returns:
-    _type_: _description_
+"""
+Api permettant la gestion des listes et le traitement en chaine de caractères
 """
 
 import random
 
-from fastapi import APIRouter, HTTPException, Request
+from fastapi import APIRouter, Request
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 
@@ -23,8 +17,10 @@ random_list_db = [{'value': ma_liste}]
 # Routing de l'API
 random_list = APIRouter()
 
+# indique où trouver les ressources html
 templates = Jinja2Templates(directory="templates")
 
+# Taille de la liste standard
 list_length = [20]
 
 
@@ -37,7 +33,10 @@ def create_random_list(list_lenght: list):
     return:
         my_liste (list): liste aléatoire
     """
-    my_liste = random.sample(range(-1000, 1000), list_lenght[0])
+    try:
+        my_liste = random.sample(range(-1000, 1000), list_lenght[0])
+    except TypeError:
+        my_liste = [0]
 
     return my_liste
 
@@ -54,16 +53,22 @@ def parse_list_data(list_to_parse: list):
     """
     result_list = []
 
-    # Logique de traitement de la liste
-    for number in list_to_parse:
-        if (number % 3 == 0 and number % 5 == 0):
-            result_list.append("GestForm")
-        elif number % 3 == 0:
-            result_list.append("Gest")
-        elif number % 5 == 0:
-            result_list.append("Form")
-        else:
-            result_list.append(str(number))
+    if list_to_parse is None:
+        result_list = ["La liste d'entrée est vide"]
+    else:
+        # Logique de traitement de la liste
+        for number in list_to_parse:
+            try:
+                if (number % 3 == 0 and number % 5 == 0):
+                    result_list.append("GestForm")
+                elif number % 3 == 0:
+                    result_list.append("Gest")
+                elif number % 5 == 0:
+                    result_list.append("Form")
+                else:
+                    result_list.append(str(number))
+            except TypeError:
+                result_list.append("-/-")
 
     return result_list
 
@@ -92,75 +97,11 @@ async def index(request: Request):
 
 @random_list.post('/', status_code=201)
 async def add_list(payload: length_input):
-    """_summary_
-
-    Args:
-        payload (RandomList): _description_
+    """Permet d'ajouter une ligne à la liste
 
     Returns:
-        _type_: _description_
+        string : affiche la nouvelle taille de la liste
     """
-    list_length[0] = 15
+    list_length[0] += 1
 
-    return {'length': list_length[0], "liste": list_length}
-
-# @random_list.post('/', status_code=201)
-# async def add_list(payload: RandomList):
-#     """_summary_
-
-#     Args:
-#         payload (RandomList): _description_
-
-#     Returns:
-#         _type_: _description_
-#     """
-#     list_length
-#     random_list_db.append(random_list)
-#     return {'id': len(random_list_db) - 1}
-
-# @random_list.put('/{id}')
-# async def update_list(id: int, payload: RandomList):
-#     """_summary_
-
-#     Args:
-#         id (int): _description_
-#         payload (RandomList): _description_
-
-#     Raises:
-#         HTTPException: _description_
-
-#     Returns:
-#         _type_: _description_
-#     """
-#     random_list = payload.dict()
-#     random_list_length = len(random_list_db)
-#     if 0 <= id <= random_list_length:
-#         random_list_db[id] = random_list
-#         return None
-
-#     raise HTTPException(
-#         status_code=404,
-#         detail=f"La liste portant l'id : {id} n a pas été trouvé")
-
-# @random_list.delete('/{id}')
-# async def delete_list(id: int):
-#     """_summary_
-
-#     Args:
-#         id (int): _description_
-
-#     Raises:
-#         HTTPException: _description_
-
-#     Returns:
-#         _type_: _description_
-#     """
-#     random_list_length = len(random_list_db)
-
-#     if 0 <= id <= random_list_length:
-#         del random_list_db[id]
-#         return None
-
-#     raise HTTPException(
-#         status_code=404,
-#         detail=(f"La liste portant l'id : {id} n a pas été trouvé"))
+    return {'length': list_length}
