@@ -36,6 +36,7 @@ https://www.python.org/downloads/
 docker build -t nom_docker_test .
 ```
 cela va permettre d'installer les requirements et de préparer le container
+
 6. lancez le container avec la commande :
 ```console
 docker run -p 8080:80 nom_docker_test
