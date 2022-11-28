@@ -1,10 +1,12 @@
-# Test d'entretien Gestform
+# Test d'entretien Gestform 💻
 
 Ce programme permet de traiter une liste de nombres entiers aléatoires et d'afficher : 
  - Geste, si la valeur de la liste est divisible par 3
  - Forme, si la valeur de la liste est divisible par 5
  - Gestorme, si la valeur de la liste est divisible par 3 et par 5
  - l'entier de la liste si aucune des conditions n'est remplies
+
+Le projet est structuré en microservice depuis le framework FastApi, 
  
  
  ## Requirements
