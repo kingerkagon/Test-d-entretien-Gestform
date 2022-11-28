@@ -29,19 +29,19 @@ Les dépendences suivantes devraient s'installer au travers du docker :
 https://www.python.org/downloads/
 </p>
 	
-4. dans votre nouveau repository, naviguez vers la racine du projet.
-5. lancez docker desktop 
-6. lancez la commande suivant à la racine de votre projet :
+3. dans votre nouveau repository, naviguez vers la racine du projet.
+4. lancez docker desktop 
+5. lancez la commande suivant à la racine de votre projet :
 ```console
 docker build -t nom_docker_test .
 ```
 cela va permettre d'installer les requirements et de préparer le container
-5. lancez le container avec la commande :
+6. lancez le container avec la commande :
 ```console
 docker run -p 8080:80 nom_docker_test
 ```
-6. retournez sur docker desktop
-7. vérifiez le container a pour status "running"
-8. cliquez sur le lien de la colonne port(s)
+7. retournez sur docker desktop
+8. vérifiez le container a pour status "running"
+9. cliquez sur le lien de la colonne port(s)
 
 
