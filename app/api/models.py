@@ -1,5 +1,5 @@
 """
-Modèle permettant la gestion des objets et du stockage de données 
+Modèle permettant la gestion des objets et du stockage de données
 """
 from pydantic import BaseModel
 

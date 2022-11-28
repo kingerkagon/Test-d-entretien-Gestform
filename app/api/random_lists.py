@@ -25,7 +25,7 @@ random_list = APIRouter()
 
 templates = Jinja2Templates(directory="templates")
 
-list_length = 5
+list_length = 20
 
 
 def create_random_list(list_lenght: int):
@@ -100,7 +100,7 @@ async def index(request: Request):
 #     Returns:
 #         _type_: _description_
 #     """
-#     list_length = 69
+#     list_length = 15
 
 #     return {'length': list_length}
 
