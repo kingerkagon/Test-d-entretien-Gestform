@@ -41,6 +41,15 @@ docker run -p 8080:80 nom_docker_test
 8. vérifiez le container a pour status "running"
 9. cliquez sur le lien de la colonne port(s)
 
+# Utilisation 🛠
+
+- Le traitement se fait automatiquement et est affiché sur le localhost
+- l'interface swagger est accessible à l'addresse : 
+
+<p align="center">
+[https://www.python.org/downloads/](http://localhost:8080/docs)
+</p>
+
 # Développeur 👨🏽‍🤝‍👨🏼
 
 kingerkagon - Eric Stuhlfauth - https://github.com/kingerkagon
