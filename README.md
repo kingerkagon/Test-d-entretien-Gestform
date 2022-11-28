@@ -8,7 +8,7 @@ Ce programme permet de traiter une liste de nombres entiers aléatoires et d'aff
 
 Le projet est structuré en microservice depuis le framework FastApi et conteneurisé par Docker. 
 
-## Requirements
+## Requirements 👨‍🔧
   - Python : 3.11+
   - Docker : dernière version
 
@@ -41,7 +41,7 @@ docker run -p 8080:80 nom_docker_test
 8. vérifiez le container a pour status "running"
 9. cliquez sur le lien de la colonne port(s)
 
-# Développeur
+# Développeur 👨‍👨‍👧‍👦
 
 kingerkagon - Eric Stuhlfauth - https://github.com/kingerkagon
 
